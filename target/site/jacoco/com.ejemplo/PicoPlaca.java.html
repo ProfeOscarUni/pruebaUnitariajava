@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PicoPlaca.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">demo</a> &gt; <a href="index.source.html" class="el_package">com.ejemplo</a> &gt; <span class="el_source">PicoPlaca.java</span></div><h1>PicoPlaca.java</h1><pre class="source lang-java linenums">package com.ejemplo;
+
+<span class="fc" id="L3">public class PicoPlaca {</span>
+    public boolean permitir(Ciudad ciudad, Dias dias, String placa){
+<span class="fc" id="L5">        boolean resultado = true;</span>
+<span class="pc bpc" id="L6" title="1 of 4 branches missed.">        if (placa==null || placa.length()==0){</span>
+<span class="fc" id="L7">            throw new IllegalArgumentException(&quot;&quot;);</span>
+        }
+<span class="fc" id="L9">        int ultimoDigito = placa.charAt(placa.length()-1);</span>
+<span class="pc bpc" id="L10" title="1 of 2 branches missed.">        if (ciudad==Ciudad.CALI) {</span>
+<span class="pc bpc" id="L11" title="5 of 6 branches missed.">            switch (dias) {</span>
+                case LUNES:
+<span class="pc bpc" id="L13" title="2 of 4 branches missed.">                    resultado = ultimoDigito == 7 || ultimoDigito==8;</span>
+<span class="fc" id="L14">                    break;</span>
+                case MARTES:
+<span class="nc bnc" id="L16" title="All 4 branches missed.">                    resultado = ultimoDigito == 9 || ultimoDigito==0;</span>
+<span class="nc" id="L17">                    break;</span>
+                case MIERCOLES:
+<span class="nc bnc" id="L19" title="All 4 branches missed.">                    resultado = ultimoDigito == 1 || ultimoDigito==2;</span>
+<span class="nc" id="L20">                    break;</span>
+                case JUEVES:
+<span class="nc bnc" id="L22" title="All 4 branches missed.">                    resultado = ultimoDigito == 3 || ultimoDigito==4;</span>
+<span class="nc" id="L23">                    break;</span>
+                case VIERNES:
+<span class="nc bnc" id="L25" title="All 4 branches missed.">                    resultado = ultimoDigito == 5 || ultimoDigito==6;</span>
+                    break;
+                
+            }
+            
+        }
+<span class="fc" id="L31">        return resultado;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
